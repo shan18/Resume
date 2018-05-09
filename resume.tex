@@ -1,92 +1,145 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Awesome CV LaTeX Template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
 %
-% This template has been downloaded from:
-% https://github.com/posquit0/Awesome-CV
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
 %
-% Author:
-% Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
 %
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
 %
-
-
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Configuration
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Themes: Awesome-CV
-\documentclass[11pt, a4paper]{awesome-cv}
-
-%%% Override a directory location for fonts(default: 'fonts/')
-\fontdir[fonts/]
-
-%%% Configure a directory location for sections
-\newcommand*{\sectiondir}{resume/}
-
-%%% Override color
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-%% Color for highlight
-% Define your custom color if you don't like awesome colors
-\colorlet{awesome}{awesome-skyblue}
-%\definecolor{awesome}{HTML}{CA63A8}
-%% Colors for text
-%\definecolor{darktext}{HTML}{414141}
-%\definecolor{text}{HTML}{414141}
-%\definecolor{graytext}{HTML}{414141}
-%\definecolor{lighttext}{HTML}{414141}
-
-%%% Override a separator for social informations in header(default: ' | ')
-%\headersocialsep[\quad\textbar\quad]
-
-
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     3rd party packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Needed to divide into several files
-\usepackage{import}
+
+\documentclass[]{deedy-resume-openfont}
+
+% Custom blue color for links
 \usepackage{color}
 \definecolor{Blue}{rgb}{0.0, 0.0, 1.0}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Personal Data
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Essentials
-\name{Shantanu}{Acharya}
-\address{National Institute of Technology, Aizawl, Mizoram, PIN: 796012, India}
-\mobile{(+91) 9559959581} 
-%%% Social
-\email{thegeek.004@gmail.com}
-\linkedin{shanacharya}
-\github{shan18}
-%%% Optionals
-\position{Open Source{\enskip\cdotp\enskip}Android{\enskip\cdotp\enskip}Machine Learning{\enskip\cdotp\enskip}Python}
+% Divide into separate files
+\newcommand*{\pgonecolone}{pg_1_column_1/}
+\newcommand*{\pgonecoltwo}{pg_1_column_2/}
+\newcommand*{\pgtwocolone}{pg_2_column_1/}
+\newcommand*{\pgtwocoltwo}{pg_2_column_2/}
+\usepackage{import}
 
+\usepackage{fontawesome}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Content
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Make a footer for CV with three arguments(<left>, <center>, <right>)
-\makecvfooter
-  {\today}
-  {Shantanu Acharya~~~·~~~Résumé~~~.~~~NIT Mizoram}
-  {\thepage}
 
 \begin{document}
-%%% Make a header for CV with personal data
-\makecvheader
 
-%%% Import contents
-\import{\sectiondir}{education.tex}
-\import{\sectiondir}{experience.tex}
-\import{\sectiondir}{project.tex}
-\import{\sectiondir}{tech.tex}
-\import{\sectiondir}{conference.tex}
-\import{\sectiondir}{relevant_courses.tex}
-\import{\sectiondir}{achievements.tex}
-\import{\sectiondir}{Positions.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lastupdated
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\namesection{Shantanu}{Acharya}{ %\urlstyle{same}\textcolor{Blue}{\url{www.codegeek96.wordpress.com}} \\
+National Institute of Technology, Aizawl, Mizoram, PIN: 796012, India \\
+\textcolor{Blue}{\href{mailto:thegeek.004@gmail.com}{thegeek.004@gmail.com}} | +91 9559959581 \\
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%    PAGE ONE COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+% File Imports
+\import{\pgonecolone}{interest.tex}
+\import{\pgonecolone}{education.tex}
+\import{\pgonecolone}{links.tex}
+\import{\pgonecolone}{skills.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     PAGE ONE COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+% File Imports
+\import{\pgonecoltwo}{experience.tex}
+\import{\pgonecoltwo}{projects.tex}
+
+\end{minipage} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     PAGE TWO COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+
+% File Imports
+\import{\pgtwocolone}{achievements.tex}
+\import{\pgtwocolone}{conference.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     PAGE TWO COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+% File Imports
+\import{\pgtwocoltwo}{projects.tex}
+\import{\pgtwocoltwo}{coursework.tex}
+
+\end{minipage} 
 \end{document}
