@@ -4,15 +4,15 @@
 
 \section{Projects}
 
-\runsubsection{Image Captioning}
-\descript{| Deep Learning | \textcolor{Blue}{\href{https://github.com/shan18/Image-Captioning}{Github}}}
-\location{Nov 2018 - Present}
+\runsubsection{Topic Based Image Captioning}
+\descript{| Deep Learning | \textcolor{Blue}{\href{https://github.com/shan18/Topic-Based-Image-Captioning}{Github}}}
+\location{Oct 2018 - Mar 2019}
 \begin{tightemize}
-\item Developed a multi-label classifier which identifies all the object categories present in an image in the MSCOCO 2017 dataset.
-\item Applied the concept of transfer learning on a pre-trained VGG19 Net to create the multi-label classifier.
-\item Developed the caption generator model using a merge model architecture.
-\item Generated the captions during inference using Beam Search.
-\item \custombold{Tools:} Python, Tensoflow, Numpy, OpenCV.
+\item Developed a multi-label image classifier using transfer learning on pre-trained VGG19 Net.
+\item Fed the results of the multi-label classifier as well as the image features extracted from VGG19 to the language model.
+\item Developed the model using merge model architecture.
+\item Applied Beam Search to generate captions during inference.
+\item \custombold{Tools:} Python, Keras-Tensoflow, MSCOCO-2017 Dataset.
 \item \custombold{Services:} Google Cloud.
 \end{tightemize}
 \sectionsep
@@ -24,6 +24,7 @@
 \item Built the entire user-company transaction system from scratch.
 \item Developed an automated system for fluctuating stock prices.
 \item Devised a tiebreaker mechanism using the concept of coefficient of variation.
+% \item Created a Bank System from which users can issue loans.
 \item Extensive usage of django signals, model managers and custom querysets.
 \item \custombold{Tools:} Python, Django, Django REST Framework, chart.js, Bootstrap v4.
 \item \custombold{Services:} Amazon Web Services, Heroku, sendgrid.
