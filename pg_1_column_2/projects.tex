@@ -6,13 +6,12 @@
 
 \runsubsection{Topic Based Image Captioning}
 \descript{| Deep Learning | \textcolor{Blue}{\href{https://github.com/shan18/Topic-Based-Image-Captioning}{Github}}}
-\location{Oct 2018 - Mar 2019}
+\location{Oct 2018 - May 2019}
 \begin{tightemize}
-\item Developed a multi-label image classifier using transfer learning on pre-trained VGG19 Net.
-\item Fed the results of the multi-label classifier as well as the image features extracted from VGG19 to the language model.
-\item Developed the model using merge model architecture.
-\item Applied Beam Search to generate captions during inference.
-\item \custombold{Tools:} Python, Keras-Tensoflow, MSCOCO-2017 Dataset.
+\item Developed a model which uses Latent Dirichlet Allocation (LDA) to extract topics from the image captions.
+\item Developed a caption generation model using LSTMs which takes the image features from a pre-trained InceptionV3 network and the topics from the LDA-model as input.
+\item Made the caption generation model using merge model architecture.
+\item \custombold{Tools:} Python, Tensoflow-Keras, NLTK, OpenCV-Python, MSCOCO-2017 Dataset.
 \item \custombold{Services:} Google Cloud.
 \end{tightemize}
 \sectionsep
@@ -22,23 +21,10 @@
 \location{Apr 2018}
 \begin{tightemize}
 \item Built the entire user-company transaction system from scratch.
-\item Developed an automated system for fluctuating stock prices.
-\item Devised a tiebreaker mechanism using the concept of coefficient of variation.
-% \item Created a Bank System from which users can issue loans.
+\item Developed a scheduler mechanism for automating user transactions.
+\item Developed a Bank Model to issue loans and deduct interests from users.
 \item Extensive usage of django signals, model managers and custom querysets.
 \item \custombold{Tools:} Python, Django, Django REST Framework, chart.js, Bootstrap v4.
-\item \custombold{Services:} Amazon Web Services, Heroku, sendgrid.
-\end{tightemize}
-\sectionsep
-
-\runsubsection{Code Warrior}
-\descript{| Online Judge Platform | \textcolor{Blue}{\href{https://github.com/morphosis-nitmz/Code-Warrior}{Github}} | \textcolor{Blue}{\href{https://code-warrior-morphosis.herokuapp.com/}{Website}}}
-\location{Feb 2018 – Mar 2018}
-\begin{tightemize}
-\item Built the entire compilation, execution and submission evaluation module from scratch.
-\item Designed the platform to support languages: C, C++, and Python.
-\item Constructed a tiebreaker mechanism which uses user submission execution time for ranking users with the same score in the leaderboard.
-\item \custombold{Tools:} Python, Django, Bootstrap v4.
-\item \custombold{Services:} Amazon Web Services, sendgrid.
+\item \custombold{Services:} Heroku, sendgrid.
 \end{tightemize}
 \sectionsep
